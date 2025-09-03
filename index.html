@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helmart Joyería - Elegancia y Tradición</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar will be loaded dynamically -->
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>HELMART</h1>
+            <p class="tagline">Joyería Artesanal</p>
+            <p class="subtitle">Creadores de joyas únicas <br> <br>• Reparación especializada • Venta de joyas en oro sólido<br>Tradición familiar en cada pieza que creamos</p>
+            <div class="hero-buttons">
+                <a href="#colecciones" class="btn btn-primary">VER CATÁLOGO</a>
+                <a href="contacto.html" class="btn btn-secondary">CONTACTAR</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section id="colecciones" class="collections">
+        <div class="collections-container">
+            <h2 class="fade-in">Nuestras Especialidades</h2>
+            <p class="collections-subtitle fade-in">Las joyas de tus sueños a un paso de ser realidad</p>
+            
+            <div class="collections-grid">
+                <div class="collection-card fade-in">
+                    <div class="collection-icon">✝️</div>
+                    <h3>Dijes Religiosos</h3>
+                    <p>Cruces y medallas religiosas en oro sólido, diseñadas con detalle y devoción para acompañarte siempre.</p>
+                    <div class="price">Desde $2,500 MXN</div>
+                </div>
+                
+                <div class="collection-card fade-in">
+                    <div class="collection-icon">🔗</div>
+                    <h3>Cadenas Especiales</h3>
+                    <p>Cadenas de oro en diferentes estilos y grosores, perfectas para combinar con tus dijes favoritos.</p>
+                    <div class="price">Desde $3,200 MXN</div>
+                </div>
+                
+                <div class="collection-card fade-in">
+                    <div class="collection-icon">🔴</div>
+                    <h3>Aretes Elegantes</h3>
+                    <p>Aretes en oro sólido con piedras preciosas y diseños únicos que realzan tu belleza natural.</p>
+                    <div class="price">Desde $1,800 MXN</div>
+                </div>
+
+                <div class="collection-card fade-in">
+                    <div class="collection-icon">⭕</div>
+                    <h3>Pulseras y Cadenas</h3>
+                    <p>Pulseras tejidas y cadenas tipo cubana en oro, combinando tradición artesanal con estilo moderno.</p>
+                    <div class="price">Desde $4,500 MXN</div>
+                </div>
+
+                <div class="collection-card fade-in">
+                    <div class="collection-icon">💍</div>
+                    <h3>Anillos con Gemas</h3>
+                    <p>Anillos únicos con esmeraldas, diamantes y piedras preciosas, diseñados para momentos especiales.</p>
+                    <div class="price">Desde $6,800 MXN</div>
+                </div>
+
+                <div class="collection-card fade-in">
+                    <div class="collection-icon">⚪</div>
+                    <h3>Perlas Cultivadas</h3>
+                    <p>Collares y pulseras de perlas naturales, símbolo de elegancia y sofisticación atemporal.</p>
+                    <div class="price">Desde $2,800 MXN</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="productos" class="featured">
+        <div class="featured-container">
+            <h2 class="fade-in">Productos Destacados</h2>
+            
+            <div class="products-grid">
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <div class="jewelry-item">✝️</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Cruz con Detalles</h3>
+                        <p>Cruz artesanal en oro sólido con grabados detallados, perfecta para uso diario o ocasiones especiales.</p>
+                        <div class="price">$3,850 MXN</div>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <div class="jewelry-item">💍</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Anillo Esmeralda</h3>
+                        <p>Anillo de oro con esmeralda natural, símbolo de elegancia y sofisticación.</p>
+                        <div class="price">$7,200 MXN</div>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <div class="jewelry-item">⭕</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Pulsera Cubana</h3>
+                        <p>Pulsera cubana en oro macizo con acabado brillante, hecha a mano.</p>
+                        <div class="price">$9,500 MXN</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+    <script>
+        // Animaciones al hacer scroll
+        document.addEventListener("DOMContentLoaded", () => {
+            const elements = document.querySelectorAll(".fade-in, .slide-in-left, .slide-in-right");
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

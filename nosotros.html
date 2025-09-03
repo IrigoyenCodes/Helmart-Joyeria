@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helmart Joyería - Responsive Fixes</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+  
+    <!-- Sample layout to demonstrate responsive behavior -->
+    <section class="hero-nosotros">
+        <h1 class="fade-in">Nuestra Historia</h1>
+        <p class="subtitle fade-in">Tradición y elegancia en cada pieza</p>
+    </section>
+
+    <section class="about">
+        <div class="about-container">
+            <div class="about-text">
+                <h2 class="fade-in">Legado Familiar</h2>
+                <p class="fade-in">En Helmart Joyería, llevamos generaciones creando piezas únicas que combinan la tradición artesanal con la elegancia contemporánea. Lo que comenzó como un taller familiar, hoy se ha convertido en una joyería reconocida por la calidad y el detalle en cada diseño.</p>
+            </div>
+            <div class="about-visual">
+                <div class="signature-logo fade-in">✨</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mvv">
+        <div class="mvv-container">
+            <div class="mvv-card fade-in">
+                <div class="mvv-icon">✨</div>
+                <h3>Misión</h3>
+                <p>Crear joyas únicas que transmitan emociones y se conviertan en símbolos de momentos inolvidables.</p>
+            </div>
+            <div class="mvv-card fade-in">
+                <div class="mvv-icon">🌟</div>
+                <h3>Visión</h3>
+                <p>Ser un referente en joyería artesanal en México, reconocidos por la excelencia y confianza de nuestros clientes.</p>
+            </div>
+            <div class="mvv-card fade-in">
+                <div class="mvv-icon">💎</div>
+                <h3>Valores</h3>
+                <p>Tradición, confianza, innovación y dedicación en cada detalle.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="team">
+        <h2 class="fade-in">Conoce a Nuestro Equipo</h2>
+        <div class="team-grid">
+            <div class="team-member fade-in">
+                <div class="team-photo">👨</div>
+                <div class="team-name">Juan Helmart</div>
+                <div class="team-role">Fundador y Maestro Joyero</div>
+            </div>
+            <div class="team-member fade-in">
+                <div class="team-photo">👩</div>
+                <div class="team-name">María Helmart</div>
+                <div class="team-role">Diseñadora de Joyería</div>
+            </div>
+            <div class="team-member fade-in">
+                <div class="team-photo">👨</div>
+                <div class="team-name">Pedro Helmart</div>
+                <div class="team-role">Atención al Cliente</div>
+            </div>
+        </div>
+    </section>
+
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+    <script>
+        // Add smooth scrolling and responsive adjustments
+        window.addEventListener('resize', function() {
+            // Optional: Add any JavaScript for responsive behavior
+            console.log('Window resized to:', window.innerWidth);
+        });
+
+        // Fade-in animations
+        document.addEventListener("DOMContentLoaded", () => {
+            const elements = document.querySelectorAll(".fade-in");
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
